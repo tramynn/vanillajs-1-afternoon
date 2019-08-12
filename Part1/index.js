@@ -4,6 +4,11 @@ function play(clickedId) {
     let playerSpan = document.getElementById('player');
     let clickedElement = document.getElementById(clickedId);
 
+    //check if board is mixed
+    if (board[clickedId] === 'X' || board[clickedId] === 'O') {
+            alert('The box has been marked, choose another box!');
+    }
+
     if (playerSpan.innerText === 'X') {
         playerSpan.innerText = 'O';
         clickedElement.innerText = 'X';
@@ -17,11 +22,6 @@ function play(clickedId) {
     } 
 
     // if box is marked, then alert that box is marked
-    function isBoxMarked() {
-        if (board[clickedId] === 'X' || board[clickedId] === 'O') {
-            alert('The box has been marked, choose another box!');
-        }
-    }
     
 
     //Set up variables for each box
