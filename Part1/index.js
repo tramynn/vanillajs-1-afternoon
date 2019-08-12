@@ -8,24 +8,22 @@ function play(clickedId) {
         playerSpan.innerText = 'O';
         clickedElement.innerText = 'X';
         board[clickedId] = 'X';
+        isBoxMarked();
     } else {
         playerSpan.innerText = 'X';
         clickedElement.innerText = 'O';
         board[clickedId] = 'O';
+        isBoxMarked();
     } 
 
     // if box is marked, then alert that box is marked
-
-    // function isBoxMarked() {
-    //     const boxMarked = true;
-    //     if (board[clickedId] === 'X' || board[clickedId] === 'O') {
-    //         alert('The box has been marked, choose another box!');
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
-    // }
+    function isBoxMarked() {
+        if (board[clickedId] === 'X' || board[clickedId] === 'O') {
+            alert('The box has been marked, choose another box!');
+        }
+    }
     
+
     //Set up variables for each box
     const topLeft = board[0];
     const topMiddle = board[1];
@@ -80,3 +78,4 @@ function play(clickedId) {
 function resetBoard() {
     
 }
+
