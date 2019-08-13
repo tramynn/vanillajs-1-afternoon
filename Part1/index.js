@@ -5,10 +5,15 @@ function play(clickedId) {
     let playerSpan = document.getElementById('player');
     let clickedElement = document.getElementById(clickedId);
 
-    //check if board is
+    //check if board is already clicked
     if (board[clickedId] === 'X' || board[clickedId] === 'O') {
         alert('The box has been marked, choose another box!');
-    }
+        if (board[clickedId] === 'X') {
+            board[ClickedId] = 'O';
+        } else {
+            board[clickedId] = 'X';
+        }
+    } 
 
     if (playerSpan.innerText === 'X') {
         playerSpan.innerText = 'O';
@@ -84,6 +89,7 @@ function play(clickedId) {
     if (boardFull === true) {
         alert("It was a CAT'S game!");
     }
+
 }
 
  //clear the board
