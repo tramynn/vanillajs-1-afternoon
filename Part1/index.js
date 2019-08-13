@@ -1,4 +1,5 @@
-const board = []; // set up an array to store the variables
+var board = []; // set up an array to store the variables
+
 
 function play(clickedId) {
     let playerSpan = document.getElementById('player');
@@ -6,34 +7,29 @@ function play(clickedId) {
 
     //check if board is mixed
     if (board[clickedId] === 'X' || board[clickedId] === 'O') {
-            alert('The box has been marked, choose another box!');
+        alert('The box has been marked, choose another box!');
     }
 
     if (playerSpan.innerText === 'X') {
         playerSpan.innerText = 'O';
         clickedElement.innerText = 'X';
         board[clickedId] = 'X';
-        isBoxMarked();
     } else {
         playerSpan.innerText = 'X';
         clickedElement.innerText = 'O';
         board[clickedId] = 'O';
-        isBoxMarked();
     } 
-
-    // if box is marked, then alert that box is marked
     
-
     //Set up variables for each box
-    const topLeft = board[0];
-    const topMiddle = board[1];
-    const topRight = board[2];
-    const middleLeft = board[3];
-    const middleMiddle = board[4];
-    const middleRight = board[5];
-    const bottomLeft = board[6];
-    const bottomMiddle = board[7];
-    const bottomRight = board[8];
+    var topLeft = board[0];
+    var topMiddle = board[1];
+    var topRight = board[2];
+    var middleLeft = board[3];
+    var middleMiddle = board[4];
+    var middleRight = board[5];
+    var bottomLeft = board[6];
+    var bottomMiddle = board[7];
+    var bottomRight = board[8];
 
     //Check who is the winner and alert winner
     if (topLeft !== undefined && topLeft === topMiddle && topLeft === topRight) {
@@ -74,8 +70,9 @@ function play(clickedId) {
     }
 }
 
-//clear the board
+ //clear the board
 function resetBoard() {
-    
-}
-
+    for (let i = 0; i < board.length; i++) {
+        board[i] = " ";
+        }
+    }
