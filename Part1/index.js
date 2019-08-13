@@ -94,8 +94,8 @@ function play(clickedId) {
 
  //clear the board
 function resetBoard() {
-    for (let i = 0; i <= board.length; i++) {
-        document.getElementById(i).innerText = '';
-        board[i] = undefined;
+    for (let i = 0; i <= board.length; i++) { //loop through the array
+        document.getElementById(i).innerText = ''; //clearing out the innerText tag
+        board[i] = undefined; //clearing the array
     }
 }
