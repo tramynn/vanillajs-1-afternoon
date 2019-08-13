@@ -5,7 +5,7 @@ function play(clickedId) {
     let playerSpan = document.getElementById('player');
     let clickedElement = document.getElementById(clickedId);
 
-    //check if board is mixed
+    //check if board is
     if (board[clickedId] === 'X' || board[clickedId] === 'O') {
         alert('The box has been marked, choose another box!');
     }
@@ -33,28 +33,44 @@ function play(clickedId) {
 
     //Check who is the winner and alert winner
     if (topLeft !== undefined && topLeft === topMiddle && topLeft === topRight) {
-        return alert(`The winner is ${topLeft}`);
+        alert(`The winner is ${topLeft}`);
+        resetBoard();
+        return;
     }
     if (middleLeft !== undefined && middleLeft === middleMiddle && middleLeft === middleRight) {
-        return alert(`The winner is ${middleLeft}`);
+        alert(`The winner is ${middleLeft}`);
+        resetBoard();
+        return;
     }
     if (bottomLeft !== undefined && bottomLeft === bottomMiddle && bottomLeft === bottomMiddle) {
-        return alert(`The winner is ${bottomLeft}`);
+        alert(`The winner is ${bottomLeft}`);
+        resetBoard();
+        return;
     }
     if (topLeft !== undefined && topLeft === middleLeft && topLeft === bottomLeft) {
-        return alert(`The winner is ${topLeft}`);
+        alert(`The winner is ${topLeft}`);
+        resetBoard();
+        return;
     }
     if (topMiddle !== undefined && topMiddle === middleMiddle && topMiddle === bottomMiddle) {
-        return alert(`The winner is ${topMiddle}`);
+        alert(`The winner is ${topMiddle}`);
+        resetBoard();
+        return;
     }
     if (topRight !== undefined && topRight === middleRight && topRight === bottomRight) {
-        return alert(`The winner is ${topRight}`);
+        alert(`The winner is ${topRight}`);
+        resetBoard();
+        return;
     }
     if (topLeft !== undefined && topLeft === middleMiddle && topLeft === bottomRight) {
-        return alert(`The winner is ${topLeft}`);
+        alert(`The winner is ${topLeft}`);
+        resetBoard();
+        return;
     }
     if (topRight !== undefined && topRight === middleMiddle && topRight === bottomLeft) {
-        return alert(`The winner is ${topRight}`);
+        alert(`The winner is ${topRight}`);
+        resetBoard();
+        return;
     } 
 
     //Check to see if the board is filled
@@ -72,7 +88,8 @@ function play(clickedId) {
 
  //clear the board
 function resetBoard() {
-    for (let i = 0; i < board.length; i++) {
-        board[i] = " ";
-        }
+    for (let i = 0; i <= board.length; i++) {
+        document.getElementById(i).innerText = '';
+        board[i] = undefined;
     }
+}
